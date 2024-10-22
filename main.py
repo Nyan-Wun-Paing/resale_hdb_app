@@ -91,7 +91,7 @@ def load_or_create_faiss_index(df):
 
 # Main function for the app
 def main():
-    st.title("HDB Resale Data App with LLM & LangChain")
+    st.title("HDB Resale Data App with LLM")
 
     df = load_data()
     st.subheader("Sample Data")
