@@ -13,7 +13,6 @@ from openai import RateLimitError
 import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
-
 import streamlit as st  
 from utility import check_password  
 
@@ -25,7 +24,14 @@ if not check_password():
 load_dotenv('.env')
 
 # OpenAI API initialization
-llm = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+if load_dotenv('.env'):
+   # for local development
+   OPENAI_KEY = os.getenv('OPENAI_API_KEY')
+else:
+   OPENAI_KEY = st.secrets['OPENAI_API_KEY']
+
+
+llm = OpenAI(api_key='OPENAI_KEY')
 
 # Retry mechanism using Tenacity for handling RateLimitError
 @retry(
