@@ -163,7 +163,7 @@ def automated_valuation_with_llm(df):
         }
 
         predicted_price = run_llm_chain(llm_chain, llm_input)
-        st.write(f"Estimated Resale Price: ${predicted_price}")
+        st.write(f"Output: {predicted_price}")
 
 # LLM-based Semantic Search Use Case
 def semantic_search(df):
