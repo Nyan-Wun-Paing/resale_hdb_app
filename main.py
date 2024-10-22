@@ -31,7 +31,7 @@ else:
    OPENAI_KEY = st.secrets['OPENAI_API_KEY']
 
 
-llm = OpenAI(api_key='OPENAI_KEY')
+llm = OpenAI(api_key=OPENAI_KEY)
 
 # Retry mechanism using Tenacity for handling RateLimitError
 @retry(
